@@ -14,9 +14,9 @@ Dark green: #28b485
 	box-sizing: border-box;
 }
 
-/*all elements inherit from body*/
+
 body {
-	font-family: "Lato", sans-serif;
+	font-family: "Lato", sans-serif;	/*all elements inherit text from body*/
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 1.7;
@@ -28,16 +28,16 @@ body {
 	height: 95vh;	/*height will be 95% of the viewport height*/
 	background-image: linear-gradient(
 		to right bottom, rgba(126, 213, 111, 0.8),
-		rgba(40, 181, 134, 0.8)) ,
+		rgba(40, 181, 134, 0.8)),
 		url("../img/hero.jpg");
-	background-size: cover;	/*kinda makes it adapt to viewport*/
-	background-position: top;	/*trims everything but what's specified to adapt to changing width*/
+	background-size: cover;		/*kinda makes it adapt to viewport*/
+	background-position: top;	/*trims everything but what's specified, to adapt to changing width/height*/
 	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 	position: relative;
 }
 
 .logo-box {
-	/*height: 35px;		for sizing, always think inner to outer; so this won't work*/
+	/*height: 35px;	for sizing, always think inner to outer; so this won't work (this was meant for sizing image)*/
 	position: absolute;
 	top: 40px;
 	left: 40px;
