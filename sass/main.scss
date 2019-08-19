@@ -1,0 +1,197 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+*/
+
+
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+$color-grey: #777;
+$color-white: #fff;
+
+/*a reset*/
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: "Lato", sans-serif;	/*all elements inherit text from body*/
+	font-weight: 400;
+	/*font-size: 16px;*/
+	line-height: 1.7;
+	color: $color-grey;
+	padding: 3rem;
+	box-sizing: border-box;
+}
+
+.header {
+	height: 95vh;	/*height will be 95% of the viewport height*/
+	background-image: linear-gradient(
+		to right bottom, rgba($color-primary-light, 0.8),
+		rgba($color-primary-dark, 0.8)),
+		url("../img/hero.jpg");
+	background-size: cover;		/*kinda makes it adapt to viewport*/
+	background-position: top;	/*trims everything but what's specified, to adapt to changing width/height*/
+	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+	position: relative;
+}
+
+.header__logo-box {
+	/*height: 35px;	for sizing, always think inner to outer; so this won't work (this was meant for sizing image)*/
+	position: absolute;		/*relative positioning could be used here*/
+	top: 4rem;
+	left: 4rem;
+}
+
+.header__logo {
+	height: 3.5rem;
+}
+
+.header__text-box {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.heading-primary {
+	color: $color-white;
+	text-transform: uppercase;
+	backface-visibility: hidden;	/*fixes a jerk movement at the end of the animation*/
+	margin-bottom: 6rem;
+}
+
+.heading-primary--main {
+	display: block;
+	font-size: 6rem;
+	font-weight: 400;
+	letter-spacing: 3.5rem;
+	animation-name: moveInLeft;
+	animation-duration: 1s;
+}
+
+.heading-primary--sub {
+	display: block;
+	font-size: 2rem;
+	font-weight: 700;
+	letter-spacing: 1.75rem;
+	animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-10rem);
+	}
+
+	70% {
+		transform: translateX(1rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}
+
+@keyframes moveInRight {
+	0% {
+		opacity: 0;
+		transform: translateX(10rem);
+	}
+
+	70% {
+		transform: translateX(-1ren);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}
+
+.btn {
+	text-transform: uppercase;
+	background-color: #4caf50;
+	text-decoration: none;
+	color: $color-white;
+	padding: 1.4rem 4rem;
+	display: inline-block;
+	border-radius: 10rem;
+	transition: transform 0.1s;
+	outline: none;
+	position: relative;
+	font-size: 1.6rem;
+}
+
+.btn:hover {
+	transform: translateY(-0.3rem);
+	box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.btn:active {
+	transform: translateY(-0.1rem);
+	box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+}
+
+.btn--white {
+	background-color: $color-white;
+	color: #777;
+}
+
+.btn::after {
+	content: "";
+	/*display: inline-block;*/		/* not necessary */
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	border-radius: 10rem;
+	transition: transform 0.2s, opacity 0.2s;
+	background-color: #4caf50;
+}
+
+.btn--white::after {
+	background-color: white;
+}
+
+.btn:hover::after {
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0;
+}
+
+
+.btn--animated {
+	animation-name: moveUp;
+	animation-duration: 0.5s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0.4s;
+	animation-fill-mode: backwards;
+}
+
+@keyframes moveUp {
+	0% {
+		opacity: 0;
+		transform: translateY(3rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
