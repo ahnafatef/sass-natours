@@ -41,18 +41,18 @@ body {
 	position: relative;
 }
 
-.logo-box {
+.header__logo-box {
 	/*height: 35px;	for sizing, always think inner to outer; so this won't work (this was meant for sizing image)*/
 	position: absolute;		/*relative positioning could be used here*/
 	top: 4rem;
 	left: 4rem;
 }
 
-.logo {
+.header__logo {
 	height: 3.5rem;
 }
 
-.text-box {
+.header__text-box {
 	position: absolute;
 	top: 40%;
 	left: 50%;
@@ -67,7 +67,7 @@ body {
 	margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
 	display: block;
 	font-size: 6rem;
 	font-weight: 400;
@@ -76,7 +76,7 @@ body {
 	animation-duration: 1s;
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
 	display: block;
 	font-size: 2rem;
 	font-weight: 700;
@@ -140,7 +140,7 @@ body {
 	box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
 }
 
-.btn-white {
+.btn--white {
 	background-color: #fff;
 	color: #777;
 }
@@ -159,7 +159,7 @@ body {
 	background-color: #4caf50;
 }
 
-.btn-white::after {
+.btn--white::after {
 	background-color: white;
 }
 
@@ -169,7 +169,7 @@ body {
 }
 
 
-.btn-animated {
+.btn--animated {
 	animation-name: moveUp;
 	animation-duration: 0.5s;
 	animation-timing-function: ease-in-out;
