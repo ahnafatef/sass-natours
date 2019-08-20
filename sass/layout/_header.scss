@@ -1,0 +1,30 @@
+.header {
+	height: 95vh;	/*height will be 95% of the viewport height*/
+	background-image: linear-gradient(
+		to right bottom, rgba($color-primary-light, 0.8),
+		rgba($color-primary-dark, 0.8)),
+		url("../img/hero.jpg");
+	background-size: cover;		/*kinda makes it adapt to viewport*/
+	background-position: top;	/*trims everything but what's specified, to adapt to changing width/height*/
+	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+	position: relative;
+
+	&__logo-box {
+		/*height: 35px;	for sizing, always think inner to outer; so this won't work (this was meant for sizing image)*/
+		position: absolute;		/*relative positioning could be used here*/
+		top: 4rem;
+		left: 4rem;
+	}
+
+	&__logo {
+		height: 3.5rem;
+	}
+
+	&__text-box {
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+	}
+}
