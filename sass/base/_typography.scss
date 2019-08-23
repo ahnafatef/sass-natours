@@ -61,3 +61,19 @@ body {
 		margin-bottom: 3rem;
 	}
 }
+
+.feature-box {
+	transition: transform 0.4s;
+
+	&__icon {
+		font-size: 4em;
+		background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+		-webkit-background-clip: text;
+		color: transparent;
+		padding-top: 1px;
+	}
+
+	&:hover {
+		transform: translateY(-2rem) scale(1.05);
+	}
+}
